@@ -14,6 +14,8 @@ refs.validationInput.addEventListener("blur", onValidationInputBlur);
 function onValidationInputBlur() {
   refs.validationInput.value.length ===
   Number(refs.validationInput.dataset.length)
-    ? refs.validationInput.classList.add("valid")
-    : refs.validationInput.classList.add("invalid");
+    ? (refs.validationInput.classList.add("valid"),
+      refs.validationInput.classList.remove("invalid"))
+    : (refs.validationInput.classList.remove("valid"),
+      refs.validationInput.classList.add("invalid"));
 }
